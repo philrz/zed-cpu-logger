@@ -1,0 +1,2 @@
+git+https://github.com/brimdata/zed#subdirectory=python/zed
+psutil
