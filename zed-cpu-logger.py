@@ -29,7 +29,7 @@ batch = ''
 while True:
     busy = str(100 - psutil.cpu_times_percent(interval=1, percpu=False).idle)
     now = datetime.datetime.now(datetime.timezone.utc)
-    batch += '{ts:' + now.isoformat().replace('+00:00', 'Z') + ',busy:' + busy + '}\n'
+    batch += '{ts:' + now.isoformat().replace('+00:00', 'Z') + ',value:' + busy + '}\n'
     if ((now - lastflush).total_seconds() >= FLUSH_INTERVAL):
         client.load(POOL_NAME, batch)
         print('.', end='')
